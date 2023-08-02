@@ -1,6 +1,13 @@
 'use strict';
 
 exports.WhatsWebURL = 'https://web.whatsapp.com/';
+exports.WhatsWebURLBeta = `${this.WhatsWebURL}/?force=beta`;
+
+exports.UserAgent = {
+    windows: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+    linux: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+    macos: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
+};
 
 exports.DefaultOptions = {
     puppeteer: {
@@ -15,7 +22,7 @@ exports.DefaultOptions = {
     qrMaxRetries: 0,
     takeoverOnConflict: false,
     takeoverTimeoutMs: 0,
-    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36',
+    userAgent: this.UserAgent.windows,
     ffmpegPath: 'ffmpeg',
     bypassCSP: false,
     proxyAuthentication: undefined
